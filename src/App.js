@@ -3,21 +3,30 @@ import './App.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import GestionDechet from './tables/pages/GestionDechet'
-import GestionPoubelle from './tables/pages/GestionoPoubelle'
+import GestionoPoubelleEtablissement from './tables/pages/GestionoPoubelleEtablissement'
 import PageTransportDechet from './tables/pages/TransportDechet';
+import ProductionPoubelle from './tables/pages/ProductionPoubelle';
 import Pannes from './tables/pages/Pannes';
-import Users from './tables/pages/Users';
+import GestionCompte from './tables/pages/GestionCompte';
+import Login from './components/Login';
 function App() {
+	/*const componentDidMoun=()=> {
+		this.interval = setInterval(() => this.setState({ time: Date.now() }), 1000);
+	  }
+	const componentWillUnmount=()=>{
+		clearInterval(this.interval);
+	  }*/
 return (
-	<div>
-	   <Router>
+	<div >
+	<Router>
 			<Navbar />
 			<Routes>
-				<Route exact path='/utilisateurs' element={<Users/>}></Route>										
-				<Route exact path='/gestion-poubelle' element={<GestionPoubelle/>}></Route>				
-				<Route exact path='/transport-dechets' element={<PageTransportDechet/>}></Route>				
-			    <Route exact path='/gestion-dechets' element={<GestionDechet/>}></Route>
-				<Route exact path='/pannes' element={<Pannes/>}></Route>							
+				<Route exact path='/gestion-compte' element={<GestionCompte/>}></Route>	
+				<Route exact path='/gestion-dechets' element={<GestionDechet/>}></Route>									
+				<Route exact path='/gestion-pannes' element={<Pannes/>}></Route>									
+				<Route exact path='/gestion-poubelle-etablissement' element={<GestionoPoubelleEtablissement/>}></Route>				
+				<Route exact path='/production-poubelle' element={<ProductionPoubelle/>}></Route>				
+				<Route exact path='/transport-dechets' element={<PageTransportDechet/>}></Route>			
 			</Routes>
 	   </Router>
 		

@@ -7,14 +7,12 @@ return (
 	<Nav>
 		<Bars />
 		<NavMenu>
-				<NavLink to='/utilisateurs' >utilisateurs</NavLink>
-				<NavLink to='/gestion-poubelle' >gestion-poubelle</NavLink>
-				<NavLink to='/transport-dechets'>transport dechet</NavLink>
-				<NavLink to='/gestion-dechets' >gestion dechet</NavLink>
-				<NavLink to='/pannes' >pannes</NavLink>	
-				<NavLink to='/qrpoubelle' >qrpoubelle</NavLink>	
-				
-				
+				<NavLink to='/gestion-compte' >gestion Compte</NavLink>
+				<NavLink to='/gestion-dechets'>gestion dechet</NavLink>
+				<NavLink to='/gestion-pannes' >gestion pannes</NavLink>	
+				<NavLink to='/gestion-poubelle-etablissement'>gestion-poubelle-etablissement</NavLink>
+				<NavLink to='/production-poubelle'>production poubelle</NavLink>
+				<NavLink to='/transport-dechets'>transport dechet</NavLink>								
 		</NavMenu>
 	
 	</Nav>

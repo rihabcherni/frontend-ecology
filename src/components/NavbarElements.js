@@ -15,12 +15,13 @@ color: #fff;
 display: flex;
 align-items: center;
 text-decoration: none;
-padding: 0 4rem;
+padding: 0 3rem;
 height: 100%;
 cursor: pointer;
 &.active {
-	color: #f0ff0f;
-	font-size: 1.4rem;
+	color: #0f0f0f;
+	font-size: 1.1rem;
+	font-weight:bold;
 }
 `;
 

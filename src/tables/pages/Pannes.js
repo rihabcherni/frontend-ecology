@@ -1,9 +1,9 @@
 import React from 'react'
 
-import ReparateurPoubelle from '../ag table/ReparateurPoubelle/ReparateurPoubelle'
-import Mecanicien from '../ag table/Mecanicien/Mecanicien'
-import ReparationPoubelle from '../ag table/ReparationPoubelle/ReparationPoubelle'
-import ReparationCamion from '../ag table/ReparationCamion/ReparationCamion'
+import ReparateurPoubelle from '../ag table/gestionPanne/ReparateurPoubelle/ReparateurPoubelle'
+import Mecanicien from '../ag table/gestionPanne/Mecanicien/Mecanicien'
+import ReparationPoubelle from '../ag table/gestionPanne/ReparationPoubelle/ReparationPoubelle'
+import ReparationCamion from '../ag table/gestionPanne/ReparationCamion/ReparationCamion'
 			
 export default function Pannes() {
   return (
