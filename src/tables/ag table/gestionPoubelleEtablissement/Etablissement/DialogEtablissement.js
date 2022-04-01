@@ -7,7 +7,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { TextField } from '@mui/material';
 
 export default function DialogEtablissement({open,handleClose,data,onChange,handleFormSubmit}) {
- const {id,id_zone_travail,nom,nbr_personnes,numero_telephone,email,adresse,mot_de_passe,quantite_dechets}=data
+ const {id,zone_travail_id,nom,nbr_personnes,numero_telephone,email,adresse,mot_de_passe,quantite_dechets}=data
 
   return (
     <div>
@@ -20,7 +20,7 @@ export default function DialogEtablissement({open,handleClose,data,onChange,hand
       <DialogTitle id="alert-dialog-title">{id?"modifier etablissement":"créer un nouveau etablissement"}</DialogTitle>
       <DialogContent>
          <form>
-                <TextField id="id_zone_travail" value={id_zone_travail} onChange={e=>onChange(e)} placeholder="Entrer id zone travail" label="id zone travail" variant="outlined" margin="dense" fullWidth />
+                <TextField id="zone_travail_id" value={zone_travail_id} onChange={e=>onChange(e)} placeholder="Entrer id zone travail" label="id zone travail" variant="outlined" margin="dense" fullWidth />
                 <TextField id="nom" value={nom} onChange={e=>onChange(e)} placeholder="Entrer nom etablissement" label="nom etablissment" variant="outlined" margin="dense" fullWidth />
                 <TextField id="nbr_personnes" value={nbr_personnes} onChange={e=>onChange(e)} placeholder="Enter nombre des personnes" label="nombre des personnes" variant="outlined" margin="dense" fullWidth />       
                 <TextField id="adresse" value={adresse} onChange={e=>onChange(e)} placeholder="Entrer adresse" label="adresse" variant="outlined" margin="dense" fullWidth />

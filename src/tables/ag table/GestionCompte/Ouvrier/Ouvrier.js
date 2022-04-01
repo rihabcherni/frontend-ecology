@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useCallback, useEffect , useRef} from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+import 'ag-grid-community/dist/styles/ag-theme-balham.css';
 import Button  from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -11,7 +11,7 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import DialogOuvrier from './DialogOuvrier';
 import {Item} from '../../../../components/Item'
-const initialValue = { id_zone_travail:"", id_camion:"",photo:"",qrcode:"", poste:"", nom:"",prenom:"",CIN:"",numero_telephone:"",email:"",mot_de_passe:"",created_at:"", updated_at:""}
+const initialValue = { zone_travail_id:"", camion_id:"",photo:"",qrcode:"", poste:"", nom:"",prenom:"",CIN:"",numero_telephone:"",email:"",mot_de_passe:"",created_at:"", updated_at:""}
 function Ouvrier() {
   const gridRef = useRef();
   const rowHeight = 50;
@@ -35,8 +35,8 @@ function Ouvrier() {
   const url = `http://127.0.0.1:8000/api/ouvrier`
   const columnDefs = [
     { headerName: "ID", field: "id", width:"100",headerCheckboxSelection: true,headerCheckboxSelectionFilteredOnly: true, checkboxSelection: true},
-    { headerName: "id_zone_travail", field: "id_zone_travail"},
-    { headerName: "id_camion", field: "id_camion"},
+    { headerName: "zone_travail_id", field: "zone_travail_id"},
+    { headerName: "camion_id", field: "camion_id"},
     { headerName: "photo", field: "photo", cellRenderer: (params) =>
       <img  style={{height:"47px", width:"47px", borderRadius:"50%"}} 
           src={`http://127.0.0.1:8000/storage/images/ouvrier/${params.data.photo}`} alt="ouvrier" />},
@@ -177,7 +177,7 @@ function Ouvrier() {
           </Item>
          
       </Grid>
-      <div className="ag-theme-alpine" style={{ height: '350px'}}>
+      <div className="ag-theme-balham" style={{ height: '350px'}}>
         <AgGridReact
         ref={gridRef}
         rowData={tableData}

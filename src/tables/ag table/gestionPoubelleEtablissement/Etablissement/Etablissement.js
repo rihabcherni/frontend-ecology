@@ -11,7 +11,7 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import DialogEtablissement from './DialogEtablissement';
 import {Item} from '../../../../components/Item'
-const initialValue = { id_zone_travail:"",id_responsable_etablissement:"",nom_etablissement:"", nbr_personnes:"",adresse:"",longitude:"",latitude:""
+const initialValue = { zone_travail_id:"",id_responsable_etablissement:"",nom_etablissement:"", nbr_personnes:"",adresse:"",longitude:"",latitude:""
 ,quantite_dechets_plastique:"",quantite_dechets_composte:"",quantite_dechets_papier:"",quantite_dechets_canette:"",created_at:"", updated_at:""}
 function Etablissement() {
   const gridRef = useRef();
@@ -35,25 +35,25 @@ function Etablissement() {
   };
   const url = `http://127.0.0.1:8000/api/etablissement`
   const columnDefs = [
-    { headerName: "ID", field: "id" ,headerCheckboxSelection: true,headerCheckboxSelectionFilteredOnly: true, checkboxSelection: true},
-    { headerName: "zone travail", field: "id_zone_travail"},
-    { headerName: "id responsable etablissement", field: "id_responsable_etablissement"},
-    { headerName: "nom_etablissement", field: "nom_etablissement"},
-    { headerName: "nombre de personnes", field: "nbr_personnes"},
-    { headerName: "adresse", field: "adresse" },
-    { headerName: "longitude", field: "longitude" },
-    { headerName: "latitude", field: "latitude"},
-    { headerName: "quantite_dechets_plastique", field: "quantite_dechets_plastique" },
-    { headerName: "quantite_dechets_composte", field: "quantite_dechets_composte" },
-    { headerName: "quantite_dechets_papier", field: "quantite_dechets_papier" },
-    { headerName: "quantite_dechets_canette", field: "quantite_dechets_canette" },
-    { headerName: "date de création", field: "created_at", type: ['dateColumn', 'nonEditableColumn']},
-    { headerName: "date de màj", field: "updated_at", type: ['dateColumn', 'nonEditableColumn']},
+    { headerName: "ID", field: "id" ,headerCheckboxSelection: true,headerCheckboxSelectionFilteredOnly: true, checkboxSelection: true, minWidth: 105},
+    { headerName: "zone travail", field: "zone_travail_id", minWidth: 135 },
+    { headerName: "responsable etablissement", field: "id_responsable_etablissement", minWidth: 240 },
+    { headerName: "nom etablissement", field: "nom_etablissement", minWidth: 195 },
+    { headerName: "nombre personnes", field: "nbr_personnes", minWidth: 185 },
+    { headerName: "adresse", field: "adresse" , minWidth: 120 },
+    { headerName: "longitude", field: "longitude", minWidth: 130  },
+    { headerName: "latitude", field: "latitude", minWidth: 130 },
+    { headerName: "quantite dechets plastique", field: "quantite_dechets_plastique" , minWidth: 250 },
+    { headerName: "quantite dechets composte", field: "quantite_dechets_composte" , minWidth: 250 },
+    { headerName: "quantite dechets papier", field: "quantite_dechets_papier", minWidth: 230  },
+    { headerName: "quantite dechets canette", field: "quantite_dechets_canette", minWidth: 230  },
+    { headerName: "date de création", field: "created_at", type: ['dateColumn', 'nonEditableColumn'], minWidth: 170 },
+    { headerName: "date de màj", field: "updated_at", type: ['dateColumn', 'nonEditableColumn'], minWidth: 170 },
     {
       headerName: "Actions", field: "id" ,filter: false, cellRenderer: (params) => <div>
         <Button variant="outlined" color="primary" onClick={() => handleUpdate(params.data)} style={{marginRight:"5px"}}><EditIcon/></Button>
         <Button variant="outlined" color="error" onClick={() => handleDelete(params.value)}><DeleteIcon/></Button>
-      </div>
+      </div>, minWidth: 170 
     }
   ]
   const columnTypes = useMemo(() => {
@@ -142,6 +142,7 @@ function Etablissement() {
   const onPaginationChange=(pageSize)=>{
     gridApi.api.paginationSetPageSize(Number(pageSize))
   }
+
   return (
     <div   style={{width:"94%" ,paddingLeft:"3%"}}>
     <h2 align="center">Etablissement</h2>
@@ -162,8 +163,9 @@ function Etablissement() {
       </Item>
      
   </Grid>
-  <div className="ag-theme-alpine" style={{ height: '350px'}}>
-        <AgGridReact ref={gridRef} rowData={tableData} columnDefs={columnDefs}  defaultColDef={defaultColDef}
+  <div className="ag-theme-alpine" style={{height:"300px"}}>
+        <AgGridReact  
+                    ref={gridRef} rowData={tableData} columnDefs={columnDefs}  defaultColDef={defaultColDef}
                     onGridReady={onGridReady} columnTypes={columnTypes} rowHeight={rowHeight}
                     pagination={true} paginationPageSize={5}/>
   </div>

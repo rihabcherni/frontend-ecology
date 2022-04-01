@@ -6,7 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { TextField } from '@mui/material';
 export default function DialogCamion({open,handleClose,data,onChange,handleFormSubmit}) {
-  const {id,id_zone_travail,matricule,type_camion,taux_remplissage,capacite,heure_depart,heure_arrivee,longitude,latitude,volume_carburant_consomme,Kilometrage}=data;
+  const {id,zone_travail_id,matricule,type_camion,taux_remplissage,capacite,heure_depart,heure_arrivee,longitude,latitude,volume_carburant_consomme,Kilometrage}=data;
   return (
     <div>
       <Dialog
@@ -18,7 +18,7 @@ export default function DialogCamion({open,handleClose,data,onChange,handleFormS
         <DialogTitle id="alert-dialog-title">{id?"modifier camion":"créer un nouveau camion"}</DialogTitle>
         <DialogContent>
          <form>
-              <TextField id="id_zone_travail" value={id_zone_travail} onChange={e=>onChange(e)} placeholder="Entrer id zone travail" label="id_zone_travail" variant="outlined" margin="dense" fullWidth />
+              <TextField id="zone_travail_id" value={zone_travail_id} onChange={e=>onChange(e)} placeholder="Entrer id zone travail" label="zone_travail_id" variant="outlined" margin="dense" fullWidth />
               <TextField id="matricule" value={matricule} onChange={e=>onChange(e)} placeholder="Entrer matricule" label="matricule" variant="outlined" margin="dense" fullWidth />
               <TextField id="type_camion" value={type_camion} onChange={e=>onChange(e)} placeholder="Entrer type camion" label="type camion" variant="outlined" margin="dense" fullWidth />
               <TextField id="taux_remplissage" value={taux_remplissage} onChange={e=>onChange(e)} placeholder="Entrer taux_remplissage" label="taux_remplissage" variant="outlined" margin="dense" fullWidth />

@@ -8,7 +8,7 @@ import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import DialogUser from './DialogUser';
 import {Item} from '../../../../components/Item'
-
+import './style.css'
 
 const initialValue = { name:"", email:"", password:"",remember_token:"",email_verified_at:"",created_at:"", updated_at:""}
 function User() {
@@ -141,6 +141,7 @@ function User() {
     gridApi.api.paginationSetPageSize(Number(pageSize))
   }
 
+ 
   return (
     <div className="App"  style={{width:"94%" ,paddingLeft:"3%"}}>
       <h1 align="center"  className='color'>Utilisateurs</h1>
@@ -161,7 +162,7 @@ function User() {
           </Item>
          
       </Grid>
-      <div className="ag-theme-alpine" style={{ height: '350px'}}>
+      <div className="ag-theme-alpine" style={{ border:"solid 2px blue", height: '300px'}}>
         <AgGridReact
         ref={gridRef}
         rowData={tableData}

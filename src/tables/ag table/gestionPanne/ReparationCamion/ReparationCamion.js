@@ -12,7 +12,7 @@ import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import DialogReparationCamion from './DialogReparationCamion';
 import {Item} from '../../../../components/Item'
 
-const initialValue = { id_camion:"", id_mecanicien:"", description_panne:"", cout:"",date_debut_reparation:"",date_fin_reparation:"",created_at:"", updated_at:""}
+const initialValue = { camion_id:"", id_mecanicien:"", description_panne:"", cout:"",date_debut_reparation:"",date_fin_reparation:"",created_at:"", updated_at:""}
 function ReparationCamion() {
   const gridRef = useRef();
   const rowHeight = 50;
@@ -36,7 +36,7 @@ function ReparationCamion() {
   const url = `http://127.0.0.1:8000/api/reparation-camion`
   const columnDefs = [
     { headerName: "id reparation camion", field: "id" ,headerCheckboxSelection: true,headerCheckboxSelectionFilteredOnly: true, checkboxSelection: true},
-    { headerName: "id_camion", field: "id_camion"},
+    { headerName: "camion_id", field: "camion_id"},
     { headerName: "id_mecanicien", field: "id_mecanicien"},
     { headerName: "description_panne", field: "description_panne" },
     { headerName: "cout", field: "cout" },

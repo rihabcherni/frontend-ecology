@@ -7,12 +7,14 @@ return (
 	<Nav>
 		<Bars />
 		<NavMenu>
+				<NavLink to='/smart' >smart</NavLink>
 				<NavLink to='/gestion-compte' >gestion Compte</NavLink>
 				<NavLink to='/gestion-dechets'>gestion dechet</NavLink>
 				<NavLink to='/gestion-pannes' >gestion pannes</NavLink>	
 				<NavLink to='/gestion-poubelle-etablissement'>gestion-poubelle-etablissement</NavLink>
 				<NavLink to='/production-poubelle'>production poubelle</NavLink>
 				<NavLink to='/transport-dechets'>transport dechet</NavLink>								
+				<NavLink to='/produits'>produit</NavLink>								
 		</NavMenu>
 	
 	</Nav>

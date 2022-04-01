@@ -12,7 +12,7 @@ import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import DialogCamion from './DialogCamion';
 import {Item} from '../../../../components/Item'
 
-const initialValue = { id_zone_travail:"",qrcode:"", matricule:"", longitude:"", latitude:"",heure_sortie:"",heure_entree:"",volume_maximale_poubelle:"",
+const initialValue = { zone_travail_id:"",qrcode:"", matricule:"", longitude:"", latitude:"",heure_sortie:"",heure_entree:"",volume_maximale_poubelle:"",
 volume_actuelle_plastique:"",volume_actuelle_papier:"",volume_actuelle_composte:"",volume_actuelle_canette:"",volume_carburant_consomme:"",Kilometrage:"",created_at:"", updated_at:""}
 function Camions() {
   const gridRef = useRef();
@@ -36,7 +36,7 @@ function Camions() {
   const url = `http://127.0.0.1:8000/api/camion`
   const columnDefs = [
     { headerName: "id", field: "id" ,headerCheckboxSelection: true,headerCheckboxSelectionFilteredOnly: true, checkboxSelection: true},
-    { headerName: "zone de travil", field: "id_zone_travail"},
+    { headerName: "zone de travil", field: "zone_travail_id"},
     { headerName: "qrcode", field: "qrcode"},
     { headerName: "matricule", field: "matricule"},
     { headerName: "longitude", field: "longitude"},

@@ -6,7 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { TextField } from '@mui/material';
 export default function DialogReparationCamion({open,handleClose,data,onChange,handleFormSubmit}) {
-  const {id,id_camion,id_mecanicien,description_panne,cout,date_debut_reparation,date_fin_reparation}=data;
+  const {id,camion_id,id_mecanicien,description_panne,cout,date_debut_reparation,date_fin_reparation}=data;
   return (
     <div>
       <Dialog
@@ -18,7 +18,7 @@ export default function DialogReparationCamion({open,handleClose,data,onChange,h
         <DialogTitle id="alert-dialog-title">{id?"modifier reparation camion":"créer un nouveau reparation camion"}</DialogTitle>
         <DialogContent>
         <form>
-              <TextField id="id_camion" value={id_camion} onChange={e=>onChange(e)} placeholder="Entrer id camion" label="id camion" variant="outlined" margin="dense" fullWidth />
+              <TextField id="camion_id" value={camion_id} onChange={e=>onChange(e)} placeholder="Entrer id camion" label="id camion" variant="outlined" margin="dense" fullWidth />
               <TextField id="id_mecanicien" value={id_mecanicien} onChange={e=>onChange(e)} placeholder="Entrer id_mecanicien" label="id mecanicien" variant="outlined" margin="dense" fullWidth />
               <TextField id="description_panne" value={description_panne} onChange={e=>onChange(e)} placeholder="Entrer description panne" label="description panne" variant="outlined" margin="dense" fullWidth />
               <TextField id="cout" value={cout} onChange={e=>onChange(e)} placeholder="Entrer cout" label="cout" variant="outlined" margin="dense" fullWidth />

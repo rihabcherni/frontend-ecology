@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useCallback, useEffect , useRef} from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import 'ag-grid-community/dist/styles/ag-grid.css';
-import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+import 'ag-grid-community/dist/styles/ag-theme-material.css';
 import Button  from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -160,7 +160,7 @@ export default function ResponsableEtablissement() {
         </Item>
       
     </Grid>
-    <div  className="ag-theme-alpine" style={{height:"350px"}}>
+    <div  className="ag-theme-material" style={{height:"350px"}}>
           <AgGridReact ref={gridRef} rowData={tableData} columnDefs={columnDefs}  defaultColDef={defaultColDef}
                       onGridReady={onGridReady} columnTypes={columnTypes} rowHeight={rowHeight}
                       pagination={true} paginationPageSize={5}/>

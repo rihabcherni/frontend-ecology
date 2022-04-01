@@ -12,7 +12,7 @@ import React, { useState, useMemo, useCallback, useEffect , useRef} from 'react'
   import DialogDepot from './DialogDepot';
 import {Item} from '../../../../components/Item'
 
-  const initialValue = { id_zone_depot:"", id_camion:"", date_depot:"", quantite_depose:"", prix_total:"",created_at:"", updated_at:""}
+  const initialValue = { id_zone_depot:"", camion_id:"", date_depot:"", quantite_depose:"", prix_total:"",created_at:"", updated_at:""}
   function Depot() {
     const gridRef = useRef();
     const rowHeight = 50;
@@ -37,7 +37,7 @@ import {Item} from '../../../../components/Item'
     const columnDefs = [
       { headerName: "id", field: "id" ,headerCheckboxSelection: true,headerCheckboxSelectionFilteredOnly: true, checkboxSelection: true},
       { headerName: "id zone depot", field: "id_zone_depot"},
-      { headerName: "id_camion", field: "id_camion"},
+      { headerName: "camion_id", field: "camion_id"},
       { headerName: "date_depot", field: "date_depot"},
       { headerName: "quantite_depose", field: "quantite_depose"},
       { headerName: "prix_total", field: "prix_total"},

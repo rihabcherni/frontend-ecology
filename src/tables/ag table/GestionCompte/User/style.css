@@ -1,0 +1,25 @@
+.ag-header-cell {
+    background-color: rgb(12, 143, 8);
+    color: #FFF;
+    font-size: 15px;
+}
+/* .ag-cell{
+    background-color: rgb(255, 253, 253);
+} */
+.ag-paging-row-summary-panel {
+    color: rgb(25, 146, 9);
+  }
+  
+  .ag-paging-page-summary-panel {
+    color: rgb(25, 146, 9);
+  }
+
+  .ag-icon {
+    color: rgb(25, 146, 9);
+    background-color: rgba(90, 212, 137, 0.719);
+    padding: 5px;
+    border-radius: 50%;
+  }
+  .ag-paging-panel {
+    background-color: rgb(243, 241, 241);
+  }
